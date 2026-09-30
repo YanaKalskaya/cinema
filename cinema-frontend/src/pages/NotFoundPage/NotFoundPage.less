@@ -1,0 +1,22 @@
+@import "../../style/variables.less";
+
+.notFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: @gap-m;
+    padding: @gap-xl @gap-m;
+    text-align: center;
+}
+
+.notFoundTitle {
+    font-size: 28px;
+}
+
+.notFoundLink {
+    color: @clr-accent;
+
+    &:hover {
+        color: @clr-accent-hover;
+    }
+}

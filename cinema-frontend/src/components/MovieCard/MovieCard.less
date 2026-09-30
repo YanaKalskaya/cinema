@@ -1,0 +1,70 @@
+@import "../../style/variables.less";
+
+.movieCard {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: @clr-surface;
+    border: 1px solid @clr-border;
+    border-radius: @radius;
+
+    &:hover {
+        background-color: @clr-surface-hover;
+        border-color: @clr-accent;
+    }
+}
+
+.movieCardPoster {
+    position: relative;
+    aspect-ratio: 6 / 7;
+    background-color: @clr-bg;
+
+    img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.movieCardStub {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: @clr-text-muted;
+}
+
+.movieCardAge {
+    position: absolute;
+    top: @gap-s;
+    right: @gap-s;
+    padding: 2px @gap-s;
+    background-color: fade(@clr-bg, 85%);
+    border-radius: @radius;
+    font-size: 13px;
+    color: @clr-accent;
+}
+
+.movieCardBody {
+    display: flex;
+    flex-direction: column;
+    gap: @gap-xs;
+    padding: @gap-m;
+}
+
+.movieCardTitle {
+    font-size: 18px;
+}
+
+.movieCardMeta {
+    color: @clr-text-muted;
+    font-size: 14px;
+}
+
+.movieCardShowAt {
+    color: @clr-accent;
+    font-size: 14px;
+}

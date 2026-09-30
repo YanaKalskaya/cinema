@@ -1,0 +1,47 @@
+@import "../../style/variables.less";
+
+.movieForm {
+    display: flex;
+    flex-direction: column;
+    gap: @gap-l;
+    max-width: @form-width;
+    margin: 0 auto;
+}
+
+.movieFormTitle {
+    font-size: 28px;
+}
+
+.movieFormRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: @gap-m;
+
+    .field {
+        flex: 1 1 180px;
+    }
+}
+
+.movieFormError {
+    color: @clr-error;
+}
+
+.movieFormSubmit {
+    align-self: flex-start;
+    padding: @gap-s @gap-xl;
+    background-color: @clr-accent;
+    border: none;
+    border-radius: @radius;
+    color: @clr-bg;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+        background-color: @clr-accent-hover;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}

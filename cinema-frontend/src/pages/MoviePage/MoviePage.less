@@ -1,0 +1,142 @@
+@import "../../style/variables.less";
+
+.movieBack {
+    margin-bottom: @gap-l;
+
+    a {
+        color: @clr-accent;
+
+        &:hover {
+            color: @clr-accent-hover;
+        }
+    }
+}
+
+.movieMain {
+    display: flex;
+    flex-wrap: wrap;
+    gap: @gap-xl;
+}
+
+.moviePoster {
+    flex: 0 0 280px;
+    aspect-ratio: 6 / 7;
+    overflow: hidden;
+    background-color: @clr-surface;
+    border: 1px solid @clr-border;
+    border-radius: @radius;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.moviePosterStub {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: @clr-text-muted;
+}
+
+.movieInfo {
+    flex: 1 1 320px;
+    display: flex;
+    flex-direction: column;
+    gap: @gap-m;
+}
+
+.movieTitle {
+    font-size: 32px;
+}
+
+.movieMeta {
+    color: @clr-text-muted;
+}
+
+.movieDescription {
+    max-width: 70ch;
+}
+
+.movieSessions {
+    margin-top: @gap-xl;
+}
+
+.movieSessionsTitle {
+    margin-bottom: @gap-m;
+    font-size: 22px;
+}
+
+.movieSessionsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: @gap-m;
+}
+
+.movieSession {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: @gap-s;
+    padding: @gap-m;
+    background-color: @clr-surface;
+    border: 1px solid @clr-border;
+    border-radius: @radius;
+}
+
+.movieSessionTime {
+    font-weight: 600;
+}
+
+.movieSessionPrice {
+    margin-left: auto;
+    color: @clr-accent;
+}
+
+.movieActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: @gap-s;
+    margin-top: @gap-m;
+}
+
+.movieAction {
+    padding: @gap-s @gap-m;
+    background-color: transparent;
+    border: 1px solid @clr-border;
+    border-radius: @radius;
+    color: @clr-text;
+    font: inherit;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+        background-color: @clr-surface-hover;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.movieActionDanger {
+    color: @clr-error;
+}
+
+.movieError {
+    margin-top: @gap-s;
+    color: @clr-error;
+}
+
+.movieSessionsPast {
+    .movieSessionsTitle {
+        color: @clr-text-muted;
+    }
+
+    .movieSession {
+        opacity: 0.55;
+    }
+}

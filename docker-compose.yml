@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: cinema
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8"
+    ports:
+      - "127.0.0.1:15433:5432"
+    volumes:
+      - cinema-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d cinema"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./cinema-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/cinema
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build: ./cinema-frontend
+    ports:
+      - "127.0.0.1:8081:80"
+    depends_on:
+      - backend
+
+volumes:
+  cinema-db-data:

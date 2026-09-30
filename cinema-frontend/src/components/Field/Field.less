@@ -1,0 +1,43 @@
+@import "../../style/variables.less";
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: @gap-xs;
+}
+
+.fieldLabel {
+    font-size: 14px;
+    color: @clr-text-muted;
+}
+
+.fieldError {
+    font-size: 13px;
+    color: @clr-error;
+}
+
+.field input,
+.field select,
+.field textarea {
+    padding: @gap-s @gap-m;
+    background-color: @clr-field-bg;
+    border: 1px solid @clr-field-border;
+    border-radius: @radius;
+    color-scheme: dark;
+    transition: border-color 0.15s;
+
+    &:hover {
+        border-color: @clr-field-border-hover;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: @clr-accent;
+        box-shadow: 0 0 0 2px fade(@clr-accent, 25%);
+    }
+}
+
+.field textarea {
+    min-height: 120px;
+    resize: vertical;
+}

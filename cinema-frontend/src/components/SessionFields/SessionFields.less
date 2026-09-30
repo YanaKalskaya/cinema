@@ -1,0 +1,71 @@
+@import "../../style/variables.less";
+
+.sessionFields {
+    display: flex;
+    flex-direction: column;
+    gap: @gap-m;
+}
+
+.sessionFieldsHead {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: @gap-m;
+}
+
+.sessionFieldsTitle {
+    font-size: 22px;
+}
+
+.sessionFieldsError {
+    color: @clr-error;
+    font-size: 14px;
+}
+
+.sessionRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: @gap-m;
+    padding: @gap-m;
+    background-color: @clr-surface;
+    border: 1px solid @clr-border;
+    border-radius: @radius;
+
+    .field {
+        flex: 1 1 160px;
+    }
+}
+
+.sessionAdd {
+    padding: @gap-s @gap-m;
+    background-color: transparent;
+    border: 1px solid @clr-accent;
+    border-radius: @radius;
+    color: @clr-accent;
+    cursor: pointer;
+
+    &:hover {
+        background-color: @clr-surface-hover;
+    }
+}
+
+.sessionRemove {
+    padding: @gap-s @gap-m;
+    background-color: transparent;
+    border: 1px solid @clr-border;
+    border-radius: @radius;
+    color: @clr-text-muted;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+        border-color: @clr-error;
+        color: @clr-error;
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+}

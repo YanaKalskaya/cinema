@@ -1,0 +1,29 @@
+@import "../../style/variables.less";
+
+.footer {
+    background-color: @clr-surface;
+    border-top: 1px solid @clr-border;
+}
+
+.footerInner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: @gap-xs;
+    max-width: @content-width;
+    margin: 0 auto;
+    padding: @gap-l @gap-m;
+    color: @clr-text-muted;
+    text-align: center;
+}
+
+.footerTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: @clr-accent;
+}
+
+.footerNote {
+    margin-top: @gap-s;
+    font-size: 14px;
+}

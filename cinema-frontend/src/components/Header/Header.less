@@ -1,0 +1,44 @@
+@import "../../style/variables.less";
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: @clr-surface;
+    border-bottom: 1px solid @clr-border;
+}
+
+.headerInner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: @gap-m;
+    max-width: @content-width;
+    margin: 0 auto;
+    padding: @gap-m;
+}
+
+.headerLogo {
+    font-size: 22px;
+    font-weight: 700;
+    color: @clr-accent;
+}
+
+.headerNav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: @gap-l;
+}
+
+.headerLink {
+    color: @clr-text-muted;
+
+    &:hover {
+        color: @clr-text;
+    }
+}
+
+.headerLinkActive {
+    color: @clr-accent;
+}

@@ -1,0 +1,65 @@
+@import "../../style/variables.less";
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: @gap-l;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.aboutTitle {
+    font-size: 28px;
+}
+
+.aboutLead {
+    color: @clr-text-muted;
+}
+
+.aboutSection {
+    display: flex;
+    flex-direction: column;
+    gap: @gap-m;
+    padding: @gap-l;
+    background-color: @clr-surface;
+    border: 1px solid @clr-border;
+    border-radius: @radius;
+}
+
+.aboutSectionTitle {
+    font-size: 20px;
+}
+
+.aboutList {
+    display: flex;
+    flex-direction: column;
+    gap: @gap-s;
+    padding-left: @gap-l;
+    list-style: disc;
+}
+
+.aboutStack {
+    display: flex;
+    flex-direction: column;
+    gap: @gap-s;
+}
+
+.aboutStackRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: @gap-xs @gap-m;
+}
+
+.aboutStackPart {
+    flex: 0 0 140px;
+    color: @clr-text-muted;
+}
+
+.aboutLink {
+    align-self: flex-start;
+    color: @clr-accent;
+
+    &:hover {
+        color: @clr-accent-hover;
+    }
+}
