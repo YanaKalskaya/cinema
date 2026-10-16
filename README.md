@@ -20,10 +20,36 @@
 | Фронтенд | React 19, TypeScript, Vite, LESS, React Router, axios |
 | Запуск | Docker Compose |
 
-## Быстрый старт
+## Структура
+
+```
+cinema-frontend/src
+├── api/         запросы к бэкенду и обработка ошибок
+├── components/  переиспользуемые компоненты (форма, поля, карточка)
+├── pages/       страницы приложения
+├── helpers/     форматирование дат, цен, длительности
+└── types/       типы DTO
+```
+
+## Запуск
+
+### Через Docker
 
 ```bash
 docker compose up --build
 ```
 
 Открыть **http://localhost:8081**.
+
+### Для разработки
+
+```bash
+# база данных
+docker compose up -d db
+
+# бэкенд — http://localhost:8085
+cd cinema-backend && ./mvnw spring-boot:run
+
+# фронтенд — http://localhost:7120, /api проксируется на бэкенд
+cd cinema-frontend && npm ci && npm run dev
+```
